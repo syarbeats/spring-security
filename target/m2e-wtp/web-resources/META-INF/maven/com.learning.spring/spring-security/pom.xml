@@ -170,6 +170,13 @@
 	    <artifactId>mysql-connector-java</artifactId>
 	    <version>5.1.47</version>
 	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-dbcp -->
+	<dependency>
+	    <groupId>org.apache.tomcat</groupId>
+	    <artifactId>tomcat-dbcp</artifactId>
+	    <version>9.0.16</version>
+	</dependency>
+	
   </dependencies>
   <build>
     <finalName>spring-security</finalName>

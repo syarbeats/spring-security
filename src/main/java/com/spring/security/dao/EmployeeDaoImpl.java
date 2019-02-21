@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import com.spring.security.model.Employee;
 
+
 @Repository
 public class EmployeeDaoImpl implements EmployeeDao {
 
@@ -36,6 +37,13 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
+	}
+
+	@SuppressWarnings("deprecation")
+	@Override
+	public Employee getEmployee(String name) {
+		List<Employee> userList = getSessionFactory().getCurrentSession().createSQLQuery("Select * from Employee e where e.name = :name").setParameter("name", name).list();
+		return userList.get(1);
 	}
 
 }

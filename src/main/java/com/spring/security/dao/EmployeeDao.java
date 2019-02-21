@@ -6,5 +6,6 @@ import com.spring.security.model.Employee;
 
 public interface EmployeeDao {
 	 void save(Employee employee);
-	   List<Employee> list();
+	 List<Employee> list();
+	 Employee getEmployee(String name);
 }

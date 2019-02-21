@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.spring.security.dao.EmployeeDao;
 import com.spring.security.model.Employee;
 
+
 @Service
 public class EmployeeServicesImpl implements EmployeeServices{
 
@@ -26,6 +27,12 @@ public class EmployeeServicesImpl implements EmployeeServices{
 	@Transactional(readOnly = true)
 	public List<Employee> list() {
 		return employeeDao.list();
+	}
+
+	@Override
+	public Employee getEmployee(String name) {
+		
+		return employeeDao.getEmployee(name);
 	}
 
 }
